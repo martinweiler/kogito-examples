@@ -1,5 +1,13 @@
 # Process Quarkus Performance
 
+## BULK TEST
+
+```bash
+docker cp payload-kafka-load.json broker:/tmp/
+docker exec -it broker bash
+broker:/$ /opt/kafka/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test < /tmp/payload-kafka-load.json
+```
+
 ## Description
 
 A set of BPMN processes used to manually run throughput tests on Quarkus in order to check performance.
